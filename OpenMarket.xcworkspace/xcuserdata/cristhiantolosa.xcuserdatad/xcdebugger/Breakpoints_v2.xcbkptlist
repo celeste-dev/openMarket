@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "BE7F6BC3-CC2A-4DD8-862E-3D1BDC5044C8"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD794770-EC06-49D3-9C6B-535540F8FCFC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenMarket/Modules/SearchProducts/ProductViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "setUp(product:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CD794770-EC06-49D3-9C6B-535540F8FCFC - 6964c82ee6dc71bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OpenMarket.ProductViewCell.setUp(product: OpenMarket.Result) -&gt; ()"
+                  moduleName = "OpenMarket"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cristhiantolosa/Development/iOS/OpenMarket/OpenMarket/Modules/SearchProducts/ProductViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "169">
+               </Location>
+               <Location
+                  uuid = "CD794770-EC06-49D3-9C6B-535540F8FCFC - 6964c82ee6dc71f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OpenMarket.ProductViewCell.setUp(product: OpenMarket.Result) -&gt; ()"
+                  moduleName = "OpenMarket"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cristhiantolosa/Development/iOS/OpenMarket/OpenMarket/Modules/SearchProducts/ProductViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "169">
+               </Location>
+               <Location
+                  uuid = "CD794770-EC06-49D3-9C6B-535540F8FCFC - 6964c82ee6dc7175"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OpenMarket.ProductViewCell.setUp(product: OpenMarket.Result) -&gt; ()"
+                  moduleName = "OpenMarket"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cristhiantolosa/Development/iOS/OpenMarket/OpenMarket/Modules/SearchProducts/ProductViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "169">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "25587427-3D43-4B86-8F45-1F7DCB909F3D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenMarket/Modules/SearchProducts/SearchProductsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C2D4872E-89B2-421B-B88C-079B9F687B1E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenMarket/Modules/SearchProducts/SearchProductsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
