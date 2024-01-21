@@ -29,6 +29,11 @@ class DetailProductViewController: UIViewController {
     
     // - Private Methods -
     private func setUp(detailProduct: Result) {
+        
+        if let url = URL(string: detailProduct.thumbnail) {
+            ImageUtil.downloadImage(from: url, uiImageView: self.productImage, width: 300, height: 300)
+        }
+        
         titleLabel.attributedText = NSAttributedString(
             string: detailProduct.title,
             attributes: [

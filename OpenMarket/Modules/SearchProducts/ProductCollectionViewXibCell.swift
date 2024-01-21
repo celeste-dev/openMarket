@@ -20,7 +20,7 @@ class ProductCollectionViewXibCell: UICollectionViewCell {
     
     func setUp(product: Result) {
         if let url = URL(string: product.thumbnail) {
-            downloadImage(from: url)
+            ImageUtil.downloadImage(from: url, uiImageView: self.productImage, width: 120, height: 120)
         }
         titleLabel.lineBreakMode = .byTruncatingTail
         titleLabel.numberOfLines = 2
@@ -41,34 +41,5 @@ class ProductCollectionViewXibCell: UICollectionViewCell {
                 NSAttributedString.Key.foregroundColor: UIColor.black])
     }
     
-    func downloadImage(from url: URL) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data, let image = UIImage(data: data) {
-                let resizedImage = self.resizeImage(image, targetSize: CGSize(width: 120, height: 120))
-                DispatchQueue.main.async {
-                    self.productImage.image = resizedImage
-                }
-            }
-        }.resume()
-    }
     
-    func resizeImage(_ image: UIImage, targetSize: CGSize) -> UIImage {
-        let size = image.size
-        let widthRatio = targetSize.width / size.width
-        let heightRatio = targetSize.height / size.height
-        let newSize: CGSize
-        
-        if widthRatio > heightRatio {
-            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
-        } else {
-            newSize = CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
-        }
-        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-        
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        image.draw(in: rect)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        
-        return newImage ?? UIImage()
-    }
 }
