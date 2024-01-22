@@ -40,9 +40,11 @@ class SearchProductsViewController: UIViewController {
                 debugPrint("Error: \(msg), \(error?.localizedDescription ?? "")")
             case .successful(let value):
                 self.productsCollectionView.reloadData()
+                self.productsCollectionView.setNeedsLayout()
+                self.productsCollectionView.layoutIfNeeded()
                 debugPrint("Successful")
-//                debugPrint("Successful: \(value)")
-//                debugPrint("Products: \(String(describing: value))")
+                //                debugPrint("Successful: \(value)")
+                //                debugPrint("Products: \(String(describing: value))")
             case .none:
                 debugPrint("None")
             }
@@ -58,6 +60,7 @@ class SearchProductsViewController: UIViewController {
 }
 
 extension SearchProductsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.searchProductsViewModel.products?.results.count ?? 0
     }
@@ -76,7 +79,6 @@ extension SearchProductsViewController: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedProduct: Result? = self.searchProductsViewModel.products?.results[indexPath.row]
-        debugPrint("selected product yeahh: \(selectedProduct)")
         self.searchProductsViewModel.selectedProduct = selectedProduct
         performSegue(withIdentifier: "DetailVC", sender: self)
     }
@@ -84,9 +86,8 @@ extension SearchProductsViewController: UICollectionViewDelegate, UICollectionVi
 
 extension SearchProductsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        searchProductsViewModel.products?.results = []
-        debugPrint("search: \(searchText)")
-
+        debugPrint("Word to search: \(searchText)")
+        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

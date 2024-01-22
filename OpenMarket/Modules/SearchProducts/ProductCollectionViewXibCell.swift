@@ -2,7 +2,7 @@
 //  ProductCollectionViewXibCell.swift
 //  OpenMarket
 //
-//  Created by Cristhian Tolosa on 2024-01-19.
+//  Created by Erika Russi on 2024-01-19.
 //
 
 import UIKit
@@ -21,6 +21,7 @@ class ProductCollectionViewXibCell: UICollectionViewCell {
     func setUp(product: Result) {
         if let url = URL(string: product.thumbnail) {
             ImageUtil.downloadImage(from: url, uiImageView: self.productImage, width: 120, height: 120)
+            self.setNeedsLayout()
         }
         titleLabel.lineBreakMode = .byTruncatingTail
         titleLabel.numberOfLines = 2

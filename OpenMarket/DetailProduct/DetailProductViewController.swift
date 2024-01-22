@@ -40,7 +40,7 @@ class DetailProductViewController: UIViewController {
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold),
                 NSAttributedString.Key.foregroundColor: UIColor.black])
         statusLabel.attributedText = NSAttributedString(
-            string: detailProduct.condition,
+            string: detailProduct.condition.capitalized,
             attributes: [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold),
                 NSAttributedString.Key.foregroundColor: UIColor.black])
