@@ -16,12 +16,14 @@ class SearchProductsViewController: UIViewController {
     // - IBOutlets -
     @IBOutlet weak var productsSearchBar: UISearchBar!
     @IBOutlet weak var productsCollectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var newSearchLabel: UILabel!
     
     // - LifeCycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         debugPrint("Selected country: \(selectedCountry)")
+        self.activityIndicator.stopAnimating()
         searchProductsViewModel.selectedCountry = self.selectedCountry
         productsCollectionView.dataSource = self
         productsCollectionView.delegate = self
@@ -38,14 +40,21 @@ class SearchProductsViewController: UIViewController {
             switch status {
             case .loading(let show):
                 debugPrint("Loading: \(show)")
+                if show {
+                    self.activityIndicator.startAnimating()
+                } else {
+                    self.activityIndicator.stopAnimating()
+                }
             case .error(let msg, let error):
                 debugPrint("Error: \(msg), \(error?.localizedDescription ?? "")")
+                self.activityIndicator.stopAnimating()
             case .successful(let value):
                 self.productsCollectionView.reloadData()
                 self.productsCollectionView.setNeedsLayout()
                 self.productsCollectionView.layoutIfNeeded()
+                self.activityIndicator.stopAnimating()
                 self.updateView()
-                debugPrint("Successful")
+                debugPrint("Successful: \((value as! Result).title)")
             case .none:
                 debugPrint("None")
             }

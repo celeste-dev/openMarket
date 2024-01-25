@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  OpenMarket
 //
-//  Created by Cristhian Tolosa on 2024-01-14.
+//  Created by Erika Russi on 2024-01-14.
 //
 
 import UIKit

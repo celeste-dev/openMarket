@@ -2,7 +2,7 @@
 //  ImageUtil.swift
 //  OpenMarket
 //
-//  Created by Cristhian Tolosa on 2024-01-20.
+//  Created by Erika Russi on 2024-01-20.
 //
 
 import Foundation

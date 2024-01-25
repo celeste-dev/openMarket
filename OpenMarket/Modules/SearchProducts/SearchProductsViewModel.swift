@@ -7,12 +7,7 @@
 
 import Foundation
 
-//protocol ISearchProductsViewModel: AnyObject {
-//    var selectedCountry: String? { get set }
-//}
-
 class SearchProductsViewModel {
-    //: ISearchProductsViewModel {
     
     var selectedCountry: String? = nil
     var errorMessage = ""
@@ -36,18 +31,21 @@ class SearchProductsViewModel {
                     await MainActor.run {
                         self.products = productsResearch
 //                        debugPrint("Products: \(String(describing: products))")
+                        self.uiStatus.value = .loading(false)
                         self.uiStatus.value = .successful(productsResearch.results)
                     }
                 } else {
                     await MainActor.run {
                         self.errorMessage = "Fetch data failed"
                         self.uiStatus.value = .error("Fetch data failed", NSError(domain: "ExampleDomain", code: 123, userInfo: nil))
+                        self.uiStatus.value = .loading(false)
 
                     }
                 }
             } else {
                 self.errorMessage = "Invalid country"
                 self.uiStatus.value = .error("Invalid country", NSError(domain: "ExampleDomain", code: 123, userInfo: nil))
+                self.uiStatus.value = .loading(false)
             }
         }
     }
