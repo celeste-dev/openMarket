@@ -30,7 +30,6 @@ class SearchProductsViewModel {
                 if let productsResearch = await NetworkAPI.getProducts(countryKey: self.selectedCountry!, productToSearch: productToSearch) {
                     await MainActor.run {
                         self.products = productsResearch
-//                        debugPrint("Products: \(String(describing: products))")
                         self.uiStatus.value = .loading(false)
                         self.uiStatus.value = .successful(productsResearch.results)
                     }

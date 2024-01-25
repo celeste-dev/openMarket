@@ -85,7 +85,6 @@ class SearchProductsViewController: UIViewController {
 }
 
 extension SearchProductsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.searchProductsViewModel.products?.results.count ?? 0
     }

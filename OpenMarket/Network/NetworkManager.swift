@@ -16,11 +16,9 @@ actor NetworkManager: GlobalActor {
     
     let baseURL: String = "https://api.mercadolibre.com/"
     
-    // Waiting time for endpoint response
     private let maxWaitTime = 30.0
     
     func get(path: String, parameters: Parameters?) async throws -> Data {
-        // You must resume the continuation exactly once
         return try await withCheckedThrowingContinuation { continuation in
             AF.request(
                 baseURL + path,

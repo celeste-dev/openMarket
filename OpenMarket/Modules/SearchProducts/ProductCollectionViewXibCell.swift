@@ -46,6 +46,4 @@ class ProductCollectionViewXibCell: UICollectionViewCell {
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular),
                 NSAttributedString.Key.foregroundColor: UIColor.black])
     }
-    
-    
 }
