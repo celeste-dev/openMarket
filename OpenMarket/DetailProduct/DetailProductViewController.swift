@@ -10,6 +10,7 @@ import UIKit
 class DetailProductViewController: UIViewController {
 
     // - Internal properties -
+    var selectedCountry: String? = ""
     var selectedProduct: Result? = nil
     
     // - IBOutlets -
@@ -23,12 +24,12 @@ class DetailProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if selectedProduct != nil{
-            self.setUp(detailProduct: selectedProduct!)
+            self.setUp(detailProduct: selectedProduct!, countryKey: self.selectedCountry ?? "")
         }
     }
     
     // - Private Methods -
-    private func setUp(detailProduct: Result) {
+    private func setUp(detailProduct: Result, countryKey: String) {
         
         if let url = URL(string: detailProduct.thumbnail) {
             ImageUtil.downloadImage(from: url, uiImageView: self.productImage, width: 300, height: 300)
@@ -44,8 +45,14 @@ class DetailProductViewController: UIViewController {
             attributes: [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold),
                 NSAttributedString.Key.foregroundColor: UIColor.black])
+        
+        let productPrice: String = if countryKey == "MLB" {
+            "R" + CurrencyUtil.getCurrencyNumber(balance: String(detailProduct.price), fractionDigits: 2)
+        } else {
+            CurrencyUtil.getCurrencyNumber(balance: String(detailProduct.price), fractionDigits: 2)
+        }
         priceLabel.attributedText = NSAttributedString(
-            string: CurrencyUtil.getCurrencyNumber(balance: String(detailProduct.price), fractionDigits: 2),
+            string: productPrice,
             attributes: [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular),
                 NSAttributedString.Key.foregroundColor: UIColor.black])

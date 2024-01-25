@@ -51,4 +51,8 @@ class SearchProductsViewModel {
             }
         }
     }
+    
+    func productQuantity() -> Int {
+        return (self.products?.results ?? []).count
+    }
 }

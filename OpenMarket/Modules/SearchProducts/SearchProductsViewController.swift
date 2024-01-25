@@ -16,6 +16,7 @@ class SearchProductsViewController: UIViewController {
     // - IBOutlets -
     @IBOutlet weak var productsSearchBar: UISearchBar!
     @IBOutlet weak var productsCollectionView: UICollectionView!
+    @IBOutlet weak var newSearchLabel: UILabel!
     
     // - LifeCycle -
     override func viewDidLoad() {
@@ -28,6 +29,7 @@ class SearchProductsViewController: UIViewController {
         self.productsCollectionView.register(nibName, forCellWithReuseIdentifier: "Cell")
         bindViewModel()
         productsSearchBar.delegate = self
+        self.updateView()
     }
     
     // - Private Methods -
@@ -42,12 +44,25 @@ class SearchProductsViewController: UIViewController {
                 self.productsCollectionView.reloadData()
                 self.productsCollectionView.setNeedsLayout()
                 self.productsCollectionView.layoutIfNeeded()
+                self.updateView()
                 debugPrint("Successful")
-                //                debugPrint("Successful: \(value)")
-                //                debugPrint("Products: \(String(describing: value))")
             case .none:
                 debugPrint("None")
             }
+        }
+    }
+    
+    private func updateView() {
+        if self.searchProductsViewModel.productQuantity() == 0 {
+            self.newSearchLabel.attributedText = NSAttributedString(
+                string: "Enter a New Search",
+                attributes: [
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold),
+                    NSAttributedString.Key.foregroundColor: UIColor.gray])
+            self.productsCollectionView.isHidden = true
+        } else {
+            self.newSearchLabel.isHidden = true
+            self.productsCollectionView.isHidden = false
         }
     }
     
@@ -55,6 +70,7 @@ class SearchProductsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let searchDetailProduct = segue.destination as? DetailProductViewController {
             searchDetailProduct.selectedProduct = searchProductsViewModel.selectedProduct
+            searchDetailProduct.selectedCountry = searchProductsViewModel.selectedCountry
         }
     }
 }
@@ -72,14 +88,16 @@ extension SearchProductsViewController: UICollectionViewDelegate, UICollectionVi
         }
         let result: Result? = self.searchProductsViewModel.products?.results[indexPath.row]
         if result != nil {
-            cell.setUp(product: result!)
+            cell.setUp(product: result!, countryKey: self.selectedCountry)
         }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedProduct: Result? = self.searchProductsViewModel.products?.results[indexPath.row]
+        let selectedCountry: String = self.selectedCountry
         self.searchProductsViewModel.selectedProduct = selectedProduct
+        self.searchProductsViewModel.selectedCountry = selectedCountry
         performSegue(withIdentifier: "DetailVC", sender: self)
     }
 }

@@ -100,13 +100,25 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiT-H0-8ve">
+                                        <rect key="frame" x="96.666666666666686" y="362.66666666666669" width="200" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Gv7-bj-dTc"/>
+                                            <constraint firstAttribute="height" constant="30" id="H9J-14-8zZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="uiT-H0-8ve" firstAttribute="centerY" secondItem="yTc-jM-jbA" secondAttribute="centerY" id="33A-rz-z3N"/>
                                     <constraint firstItem="FtN-SR-6Ej" firstAttribute="leading" secondItem="yTc-jM-jbA" secondAttribute="leading" id="4WI-fU-uFz"/>
                                     <constraint firstAttribute="bottom" secondItem="FtN-SR-6Ej" secondAttribute="bottom" id="DI4-TR-d6E"/>
                                     <constraint firstAttribute="trailing" secondItem="FtN-SR-6Ej" secondAttribute="trailing" id="Vja-wQ-vr7"/>
                                     <constraint firstItem="s1r-ZG-cJx" firstAttribute="top" secondItem="yTc-jM-jbA" secondAttribute="top" id="dC7-jt-KYq"/>
+                                    <constraint firstItem="uiT-H0-8ve" firstAttribute="centerX" secondItem="yTc-jM-jbA" secondAttribute="centerX" id="gks-y4-Swm"/>
                                     <constraint firstAttribute="trailing" secondItem="s1r-ZG-cJx" secondAttribute="trailing" id="oBT-8f-Qie"/>
                                     <constraint firstItem="s1r-ZG-cJx" firstAttribute="leading" secondItem="yTc-jM-jbA" secondAttribute="leading" id="sxM-Mo-xC2"/>
                                     <constraint firstItem="FtN-SR-6Ej" firstAttribute="top" secondItem="s1r-ZG-cJx" secondAttribute="bottom" id="yhW-QC-fq8"/>
@@ -124,6 +136,7 @@
                     </view>
                     <navigationItem key="navigationItem" style="editor" id="ttI-HV-sfT"/>
                     <connections>
+                        <outlet property="newSearchLabel" destination="uiT-H0-8ve" id="54S-x5-3eN"/>
                         <outlet property="productsCollectionView" destination="FtN-SR-6Ej" id="ZlK-tz-M1L"/>
                         <outlet property="productsSearchBar" destination="s1r-ZG-cJx" id="gYc-H9-Swi"/>
                         <segue destination="Rn9-VU-ITE" kind="push" identifier="DetailVC" id="Ukm-dh-Pb4"/>

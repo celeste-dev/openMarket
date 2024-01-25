@@ -18,7 +18,7 @@ class ProductCollectionViewXibCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func setUp(product: Result) {
+    func setUp(product: Result, countryKey: String) {
         if let url = URL(string: product.thumbnail) {
             ImageUtil.downloadImage(from: url, uiImageView: self.productImage, width: 120, height: 120)
             self.setNeedsLayout()
@@ -30,9 +30,13 @@ class ProductCollectionViewXibCell: UICollectionViewCell {
             attributes: [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold),
                 NSAttributedString.Key.foregroundColor: UIColor.black])
-        
+        let productPrice: String = if countryKey == "MLB" {
+            "R" + CurrencyUtil.getCurrencyNumber(balance: String(product.price), fractionDigits: 2)
+        } else {
+            CurrencyUtil.getCurrencyNumber(balance: String(product.price), fractionDigits: 2)
+        }
         priceLabel.attributedText = NSAttributedString(
-            string: CurrencyUtil.getCurrencyNumber(balance: String(product.price), fractionDigits: 2),
+            string: productPrice,
             attributes: [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular),
                 NSAttributedString.Key.foregroundColor: UIColor.black])
