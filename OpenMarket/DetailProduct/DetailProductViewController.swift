@@ -45,7 +45,7 @@ class DetailProductViewController: UIViewController {
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold),
                 NSAttributedString.Key.foregroundColor: UIColor.black])
         priceLabel.attributedText = NSAttributedString(
-            string: "$" + String(detailProduct.price),
+            string: CurrencyUtil.getCurrencyNumber(balance: String(detailProduct.price), fractionDigits: 2),
             attributes: [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular),
                 NSAttributedString.Key.foregroundColor: UIColor.black])

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		225141822B61DB3D00807746 /* CurrencyUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225141812B61DB3D00807746 /* CurrencyUtil.swift */; };
 		225699192B59901C00D3056A /* ServerOpenMarketModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225699182B59901C00D3056A /* ServerOpenMarketModels.swift */; };
 		2256991B2B59DE2300D3056A /* SearchProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256991A2B59DE2300D3056A /* SearchProductsViewModel.swift */; };
 		225699242B5B036D00D3056A /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225699232B5B036D00D3056A /* Observable.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		05E3943DC8A40C7D5EAD0637 /* Pods-OpenMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMarket.release.xcconfig"; path = "Target Support Files/Pods-OpenMarket/Pods-OpenMarket.release.xcconfig"; sourceTree = "<group>"; };
 		158F01653D2DF08902D4160A /* Pods-OpenMarket-OpenMarketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMarket-OpenMarketUITests.debug.xcconfig"; path = "Target Support Files/Pods-OpenMarket-OpenMarketUITests/Pods-OpenMarket-OpenMarketUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		225141812B61DB3D00807746 /* CurrencyUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUtil.swift; sourceTree = "<group>"; };
 		225699182B59901C00D3056A /* ServerOpenMarketModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerOpenMarketModels.swift; sourceTree = "<group>"; };
 		2256991A2B59DE2300D3056A /* SearchProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductsViewModel.swift; sourceTree = "<group>"; };
 		225699232B5B036D00D3056A /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				225699232B5B036D00D3056A /* Observable.swift */,
 				2289ECE02B5CBB0B007FF090 /* ImageUtil.swift */,
+				225141812B61DB3D00807746 /* CurrencyUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -159,12 +162,10 @@
 		22CD62452B54AB6300E1A557 /* OpenMarket */ = {
 			isa = PBXGroup;
 			children = (
-				22F65CFD2B58536400C1627D /* Managers */,
 				22F65CFB2B58532D00C1627D /* Models */,
 				22F65D012B5855C900C1627D /* Modules */,
 				2256992F2B5B56F600D3056A /* DetailProduct */,
 				22F65CFE2B58547B00C1627D /* Network */,
-				22F65CFA2B58532400C1627D /* Services */,
 				225699222B5B02C000D3056A /* Utils */,
 				22CD62462B54AB6300E1A557 /* AppDelegate.swift */,
 				22CD62482B54AB6300E1A557 /* SceneDelegate.swift */,
@@ -192,13 +193,6 @@
 			path = OpenMarketUITests;
 			sourceTree = "<group>";
 		};
-		22F65CFA2B58532400C1627D /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		22F65CFB2B58532D00C1627D /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,13 +200,6 @@
 				225699252B5B06B500D3056A /* UIStatus.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		22F65CFD2B58536400C1627D /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		22F65CFE2B58547B00C1627D /* Network */ = {
@@ -524,6 +511,7 @@
 				2256991B2B59DE2300D3056A /* SearchProductsViewModel.swift in Sources */,
 				22A1A1492B5987EF0087CC15 /* NetworkAPI.swift in Sources */,
 				225699242B5B036D00D3056A /* Observable.swift in Sources */,
+				225141822B61DB3D00807746 /* CurrencyUtil.swift in Sources */,
 				22CD62472B54AB6300E1A557 /* AppDelegate.swift in Sources */,
 				22A1A1472B5986BB0087CC15 /* NetworkManager.swift in Sources */,
 				225699192B59901C00D3056A /* ServerOpenMarketModels.swift in Sources */,

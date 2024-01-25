@@ -30,8 +30,9 @@ class ProductCollectionViewXibCell: UICollectionViewCell {
             attributes: [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold),
                 NSAttributedString.Key.foregroundColor: UIColor.black])
+        
         priceLabel.attributedText = NSAttributedString(
-            string: "$" + String(product.price),
+            string: CurrencyUtil.getCurrencyNumber(balance: String(product.price), fractionDigits: 2),
             attributes: [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular),
                 NSAttributedString.Key.foregroundColor: UIColor.black])
